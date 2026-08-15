@@ -2,12 +2,15 @@ package barig.adam;
 
 import barig.adam.parser.CityDTO;
 import barig.adam.parser.CordsDTO;
+import barig.adam.parser.Parser;
+
+import java.io.IOException;
 
 public class Main {
-    static void main() {
-        CordsDTO coords = new CordsDTO(59.939095, 30.315868);
-        CityDTO a = new CityDTO("spb", coords);
+    public static void main(String[] args) throws IOException {
 
-        System.out.println(a.getCoords().getLon());
+        Parser p = new Parser();
+
+        p.toXML();
     }
 }

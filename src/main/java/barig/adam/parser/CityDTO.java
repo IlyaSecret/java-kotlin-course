@@ -1,12 +1,8 @@
 package barig.adam.parser;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
-@AllArgsConstructor
+@Data
 public class CityDTO {
     private String slug;
 
