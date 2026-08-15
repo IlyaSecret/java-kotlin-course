@@ -43,7 +43,6 @@ public class Parser {
         try (OutputStream os = Files.newOutputStream(Paths.get("build/resources/main/stuff.xml"))) {
         xmlMapper.writeValue(os, data);
         logger.debug("Successfully wrote stuff to XML file: {}", data);
-        logger.info("Successfully wrote stuff to XML file");
         }
         catch (IOException e) {
             logger.error("Failed to write xml file: {}", data, e);
