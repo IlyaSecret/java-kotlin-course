@@ -1,8 +1,10 @@
-package barig.adam.parser;
+package barig.adam.dto;
 
 import lombok.*;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class CordsDTO {
     private double lat;
     private double lon;

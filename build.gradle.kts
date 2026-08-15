@@ -17,6 +17,7 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.46")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.22.1")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.21.2")
+    implementation("ch.qos.logback:logback-classic:1.6.2")
 }
 
 tasks.test {

@@ -1,7 +1,6 @@
 package barig.adam;
 
-import barig.adam.parser.CityDTO;
-import barig.adam.parser.CordsDTO;
+import barig.adam.dto.CityDTO;
 import barig.adam.parser.Parser;
 
 import java.io.IOException;
@@ -11,6 +10,9 @@ public class Main {
 
         Parser p = new Parser();
 
-        p.toXML();
+        CityDTO data = p.parse("test-erer.json");
+        if (data != null) {
+            p.toXML(data);
+        }
     }
 }
