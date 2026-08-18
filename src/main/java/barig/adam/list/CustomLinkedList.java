@@ -1,8 +1,10 @@
 package barig.adam.list;
 
+import java.lang.reflect.Array;
 import java.util.Collection;
+import java.util.Iterator;
 
-public class CustomLinkedList<T> {
+public class CustomLinkedList<T> implements Iterable<T> {
         private static class Node<T> {
             T data;
             Node<T> next;
@@ -12,12 +14,32 @@ public class CustomLinkedList<T> {
             }
         }
 
+        @Override
+        public Iterator<T> iterator() {
+            return new Iterator<T>() {
+                private Node<T> current = head;
+
+                @Override
+                public boolean hasNext() {
+                    return current != null;
+                }
+
+                @Override
+                public T next() {
+                    T data = current.data;
+                    current = current.next;
+                    return data;
+                }
+            };
+        }
+
         private Node<T> head;
         private Node<T> tail;
         private int size = 0;
 
         public void add(T val) {
-                Node<T> newNode = new Node<>(val);
+            Node<T> newNode = new Node<>(val);
+
             if (head == null) {
                 head = newNode;
                 tail = newNode;
@@ -62,7 +84,7 @@ public class CustomLinkedList<T> {
             return false;
         }
 
-        public void addAll(Collection<? extends T> vals) {
+        public void addAll(Iterable<? extends T> vals) {
             for (T v : vals) {
                 this.add(v);
             }
